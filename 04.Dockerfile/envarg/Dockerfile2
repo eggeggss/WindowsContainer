@@ -1,0 +1,22 @@
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
+
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+# One
+
+ARG MODE
+RUN Write-Host $ENV:MODE
+
+# Two
+
+# ENV MODE=Release
+# ARG MODE
+
+# RUN Write-Host $ENV:MODE
+
+# Three
+
+# ARG MODE
+# ENV MODE=$ENV:MODE
+
+# RUN Write-Host $ENV:MODE

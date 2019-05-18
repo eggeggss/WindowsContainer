@@ -1,0 +1,38 @@
+FROM mcr.microsoft.com/windows/nanoserver:1809
+
+ENV REDIS_VERSION=3.2.100
+ENV REDIS_DIR="C:\Redis"
+
+# RUN ECHO "REDIS_DIR: " ${REDIS_DIR} & \
+#     ECHO "REDIS_VERSION: " $REDIS_VERSION & \
+#     ECHO "REDIS_DIR: " \${REDIS_DIR} & \
+#     ECHO "REDIS_VERSION: " \$REDIS_VERSION & \
+#     ECHO "REDIS_DIR: " $ENV:REDIS_DIR & \
+#     ECHO "REDIS_VERSION: " $ENV:REDIS_VERSION
+
+## %ENV_Name%
+
+RUN Echo "REDIS_DIR: " %REDIS_DIR% & \
+    Echo "REDIS_VERSION: " %REDIS_VERSION%
+
+## Set command
+
+# RUN set skilla=c:\skill & set path=%skilla%;%REDIS_DIR%;%path% & set
+# RUN set skillb=c:\skill && set path=%skillb%;%REDIS_DIR%;%path% && set
+# RUN set skillc=c:\skill | set path=%skillc%;%REDIS_DIR%;%path% | set
+# RUN set
+
+## Setx command
+
+# One
+# RUN setx PATH "%REDIS_DIR%;%PATH%;c:\tree"
+# RUN set && path
+
+# Two
+# RUN setx PATH "%PATH%;c:\tree;%REDIS_DIR%"
+# RUN set && path
+
+## Path command
+
+# RUN set sk=c:\sk && path %path%;%sk% && set
+# RUN set && path
