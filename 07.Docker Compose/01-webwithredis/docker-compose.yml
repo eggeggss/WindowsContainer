@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  web:
+    image: kkbruce/aspnetmvcapp:health
+    depends_on:
+      - redis
+  redis:
+    image: kkbruce/redis-windows
+  db:
+    image: microsoft/mssql-server-windows-developer
+    volumes:
+      - C:\Database:c:\database
+
+# networks:
+#   myappnet:
+#     driver: overlay
+#     attachable: true
+
+# volumes:
+#   appdata:
+#   dbdata:

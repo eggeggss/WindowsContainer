@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+
+  redis:
+    image: kkbruce/redis-windows
+
+  # db:
+  #   image: microsoft/mssql-server-windows-developer

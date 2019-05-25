@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - 9000:9000
+    volumes:
+      # 等 docker swarm 修正
+      #- \\.\pipe\docker_engine:\\.\pipe\docker_engine
+      - C:\ProgramData\Portainer:C:\data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == manager
+          - node.labels.osname == twvtdocker01

@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  db:
+    image: microsoft/mssql-server-windows-developer
+    volumes:
+      - dbdata:c:\database
+volumes:
+  dbdata:

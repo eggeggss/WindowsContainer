@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  web:
+    image: kkbruce/aspnetmvcapp:health
+    healthcheck:
+      test: ["NONE"]

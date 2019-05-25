@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  web:
+    image: kkbruce/aspnetmvcapp:health
+    networks:
+      - frontend
+  redis:
+    image: kkbruce/redis-windows
+    networks:
+      - backend
+networks:
+  frontend:
+  backend:

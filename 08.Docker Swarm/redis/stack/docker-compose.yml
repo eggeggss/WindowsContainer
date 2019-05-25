@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+
+  redis:
+    image: kkbruce/redis-windows
+    ports:
+      - 6379:6379
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 5s
+      restart_policy:
+        condition: on-failure
+      # placement:
+      #   constraints:
+      #     - node.hostname == kklab?

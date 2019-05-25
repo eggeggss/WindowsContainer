@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+
+  docs:
+    image: mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+    user: 'NT AUTHORITY\SYSTEM'
+    ports:
+      - "8080:80"
+    volumes:
+      - C:\Public\:C:\inetpub\wwwroot\
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.labels.os == windows
+    tty: true
+    stdin_open: true
