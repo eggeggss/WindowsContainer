@@ -18,7 +18,7 @@ Get-ChildItem env:Path | fl
 
 ```powershell
 cd $env:programdata
-cd $env:grogramfile
+cd $env:programfiles
 $env:clientname
 ```
 
